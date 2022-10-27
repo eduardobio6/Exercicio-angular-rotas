@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TabuadaComponent implements OnInit {
 
-  @Input() num: number = 2;
+  @Input() num: Number = 0;
 
   constructor() { }
 
@@ -16,9 +16,12 @@ export class TabuadaComponent implements OnInit {
 
   getTabuada(){
 
-    for(var i = 0; i<=10; i++){
-      return this.num * i;
+    var tabuada = '';
+    for(var i = 1; i<=10; i++){
+      tabuada +=
+      this.num + 'X' + i + '=' + Number(this.num) * i + `|| \n`
     }
     
+    return tabuada;
   }
 }
